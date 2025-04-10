@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "types": ["@playwright/test", "node"],
+        "target": "es2024",
+        "lib": ["ES2024", "DOM"],
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "outDir": "dist",
+        "strict": true,
+        "skipLibCheck": true,
+        "allowJs": true
+    },
+    "exclude": ["node_modules"]
+}

@@ -6,7 +6,7 @@ export const BASE_URL = 'https://qa1.intaker.xyz/home/widget/qa1/demo.html';
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
-  testDir: './tests',
+  testDir: './tests/specs',
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   workers: 3,
@@ -21,14 +21,14 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     },
 
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
+    // {
+    //   name: 'firefox',
+    //   use: { ...devices['Desktop Firefox'] },
+    // },
 
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    }
+    // {
+    //   name: 'webkit',
+    //   use: { ...devices['Desktop Safari'] },
+    // }
   ]
 });

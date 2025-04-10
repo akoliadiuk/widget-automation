@@ -1,5 +1,5 @@
-import { BASE_URL } from '../playwright.config';
-import { test } from './fixtures';
+import { BASE_URL } from '../../playwright.config';
+import { test } from '../fixtures';
 
 const PAGE_TITLE = 'Intaker | Live Chat Law Firm | 24/7 Unlimited Leads';
 

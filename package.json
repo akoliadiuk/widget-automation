@@ -2,17 +2,18 @@
   "name": "widget-automation",
   "version": "1.0.0",
   "description": "A simple test framework, for https://practicesoftwaretesting.com/",
-  "main": "index.js",
   "scripts": {
-    "test": "playwright test"
+    "test": "playwright test",
+    "lint": "eslint ."
   },
-  "keywords": [],
-  "author": "",
+  "author": "Andrii Koliadiuk",
   "license": "ISC",
   "type": "module",
   "devDependencies": {
     "@playwright/test": "^1.51.1",
     "@types/node": "^22.14.0",
+    "@typescript-eslint/eslint-plugin": "^8.29.1",
+    "eslint": "^9.24.0",
     "typescript": "^5.8.3"
   }
 }

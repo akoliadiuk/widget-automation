@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "A simple test framework, for https://practicesoftwaretesting.com/",
   "scripts": {
-    "test": "playwright test",
+    "pw-test": "playwright test",
+    "pw-report": "playwright show-report",
     "lint": "eslint ."
   },
   "author": "Andrii Koliadiuk",

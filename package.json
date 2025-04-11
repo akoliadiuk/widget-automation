@@ -1,7 +1,7 @@
 {
   "name": "widget-automation",
   "version": "1.0.0",
-  "description": "A simple test framework, for https://practicesoftwaretesting.com/",
+  "description": "A simple test framework, for 'Call Us' widget",
   "scripts": {
     "pw-test": "playwright test",
     "pw-report": "playwright show-report",

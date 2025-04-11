@@ -1,5 +1,5 @@
 import { test } from '../../fixtures';
-import dataset from '../../data/call-us-widget/call-us.dataset.json' assert { type: 'json' };
+import dataset from '../../data/call-us-widget/call-us-ui.dataset.json' assert { type: 'json' };
 import CallUsWidget from '../../../pages/components/CallUsWidget';
 
 test.describe('Main Page - "Call Us" Widget', () => {
@@ -21,17 +21,13 @@ test.describe('Main Page - "Call Us" Widget', () => {
     await widget.shouldBeClosed();
   });
 
-  test(
-    'should have all the elements',
-    { tag: '@regression' },
-    async () => {
-      await widget.shouldCloseButtonBeVisible();
-      await widget.shouldTitleBe(dataset.title);
-      await widget.shouldDescriptionBe(dataset.description);
-      await widget.shouldTextInputsBeVisible();
-      await widget.shouldCountryCodeDropdownBeVisible();
-      await widget.shouldInactiveSubmitButtonBeVisible();
-      await widget.shouldFooterLogoBeVisible();
-    }
-  );
+  test('should have all the elements', { tag: '@regression' }, async () => {
+    await widget.shouldCloseButtonBeVisible();
+    await widget.shouldTitleBe(dataset.title);
+    await widget.shouldDescriptionBe(dataset.description);
+    await widget.shouldTextInputsBeVisible();
+    await widget.shouldCountryCodeDropdownBeVisible();
+    await widget.shouldInactiveSubmitButtonBeVisible();
+    await widget.shouldFooterLogoBeVisible();
+  });
 });

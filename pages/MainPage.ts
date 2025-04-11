@@ -1,6 +1,7 @@
 import { Page, Locator, expect } from '@playwright/test';
 import { BASE_URL } from '../playwright.config';
 import CallUsWidget from './components/CallUsWidget';
+import CallUsSuccessModal from './components/CallUsSuccessModal';
 
 export default class MainPage {
   private readonly _page: Page;
@@ -11,11 +12,17 @@ export default class MainPage {
     return this._callUsWidget;
   }
 
+  protected readonly _callUsSuccessModal: CallUsSuccessModal;
+  get callUsSuccessModal(): CallUsSuccessModal {
+    return this._callUsSuccessModal;
+  }
+
   constructor(page: Page, url: string) {
     this._page = page;
     this.url = url;
     this._callUsButton = page.locator('#icw--call--button');
     this._callUsWidget = new CallUsWidget(this._page);
+    this._callUsSuccessModal = new CallUsSuccessModal(this._page);
   }
 
   get url(): string {

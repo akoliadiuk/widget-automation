@@ -10,43 +10,46 @@ import { FlatCompat } from '@eslint/eslintrc';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const compat = new FlatCompat({
-    baseDirectory: __dirname,
-    recommendedConfig: js.configs.recommended,
-    allConfig: js.configs.all
+  baseDirectory: __dirname,
+  recommendedConfig: js.configs.recommended,
+  allConfig: js.configs.all,
 });
 
 export default defineConfig([
-    globalIgnores(['dist/', '**/node_modules/', 'test-results/', 'playwright-report/']),
-    {
-        extends: compat.extends('eslint:recommended', 'plugin:@typescript-eslint/recommended'),
+  globalIgnores(['dist/', '**/node_modules/', 'test-results/', 'playwright-report/']),
+  {
+    extends: compat.extends('eslint:recommended', 'plugin:@typescript-eslint/recommended'),
 
-        plugins: {
-            '@typescript-eslint': typescriptEslint,
-        },
-
-        languageOptions: {
-            globals: {
-                ...globals.node,
-            },
-
-            parser: tsParser,
-            ecmaVersion: 'latest',
-            sourceType: 'module',
-
-            parserOptions: {
-                project: './tsconfig.json',
-            },
-        },
-
-        rules: {
-            quotes: ['error', 'single'],
-            'eol-last': ['error', 'always'],
-            'max-len': ['error', {
-                code: 100,
-            }],
-
-            'object-curly-spacing': ['error', 'always'],
-            'prettier/prettier': 'error',
-        },
+    plugins: {
+      '@typescript-eslint': typescriptEslint,
     },
+
+    languageOptions: {
+      globals: {
+        ...globals.node,
+      },
+
+      parser: tsParser,
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+
+      parserOptions: {
+        project: './tsconfig.json',
+      },
+    },
+
+    rules: {
+      quotes: ['error', 'single'],
+      'eol-last': ['error', 'always'],
+      'max-len': [
+        'error',
+        {
+          code: 100,
+        },
+      ],
+
+      'object-curly-spacing': ['error', 'always'],
+      'prettier/prettier': 'error',
+    },
+  },
 ]);

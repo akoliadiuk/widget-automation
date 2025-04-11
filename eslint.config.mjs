@@ -46,6 +46,7 @@ export default defineConfig([
             }],
 
             'object-curly-spacing': ['error', 'always'],
+            'prettier/prettier': 'error',
         },
     },
 ]);

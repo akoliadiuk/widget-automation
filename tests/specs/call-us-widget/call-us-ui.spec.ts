@@ -1,7 +1,6 @@
-import { test } from "../../fixtures";
-import dataset from "../../data/call-us-widget/call-us.dataset.json" assert { type: "json" };
-import MainPage from "../../../pages/MainPage";
-import CallUsWidget from "../../../pages/components/CallUsWidget";
+import { test } from '../../fixtures';
+import dataset from '../../data/call-us-widget/call-us.dataset.json' assert { type: 'json' };
+import CallUsWidget from '../../../pages/components/CallUsWidget';
 
 test.describe('Main Page - "Call Us" Widget', () => {
   let widget: CallUsWidget;
@@ -11,20 +10,20 @@ test.describe('Main Page - "Call Us" Widget', () => {
     widget = mainPage.callUsWidget;
   });
 
-  test("should open", { tag: "@smoke" }, async () => {
+  test('should open', { tag: '@smoke' }, async () => {
     await widget.shouldBeOpened();
     await widget.shouldBeInViewPort();
   });
 
-  test("should close", { tag: "@smoke" }, async () => {
+  test('should close', { tag: '@regression' }, async () => {
     await widget.close();
-    
+
     await widget.shouldBeClosed();
   });
 
   test(
-    "should have all the elements",
-    { tag: "@regression" },
+    'should have all the elements',
+    { tag: '@regression' },
     async () => {
       await widget.shouldCloseButtonBeVisible();
       await widget.shouldTitleBe(dataset.title);
